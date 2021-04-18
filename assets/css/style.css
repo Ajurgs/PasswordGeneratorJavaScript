@@ -117,6 +117,31 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
+/* modal */
+.modal {
+  display: flex;
+}
+.form {
+  display: flex;
+  width: 50%;
+  height: 50%;
+  align-items: center;
+}
+/* slider */
+.slider {
+  margin: 10px;
+  -webkit-appearance: none;
+  width: 50%;
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: royalblue;
+}
 
 @media (max-width: 690px) {
   .btn {

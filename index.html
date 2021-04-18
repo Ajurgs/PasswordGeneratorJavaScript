@@ -12,7 +12,7 @@
       <header>
         <h1>Password Generator</h1>
       </header>
-      <div class="card">
+      <main class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
@@ -27,6 +27,23 @@
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
+      </main>
+    </div>
+    <div class="modal">
+      <div class="form">
+        <!-- length input 8-128 -->
+        <p>Password Length:</p>
+        <input
+          type="range"
+          class="slider"
+          id="length"
+          name="length"
+          min="8"
+          max="128"
+          value="12"
+        />
+        <span id="value">12</span>
+        <!-- character type checkboxes -->
       </div>
     </div>
     <script src="./assets/javascript/script.js"></script>
