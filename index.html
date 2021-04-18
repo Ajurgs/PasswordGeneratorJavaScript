@@ -29,20 +29,23 @@
         </div>
       </main>
     </div>
-    <div class="modal">
+    <div class="modal" id="passwordSpecs">
       <div class="form">
         <!-- length input 8-128 -->
-        <p>Password Length:</p>
-        <input
-          type="range"
-          class="slider"
-          id="length"
-          name="length"
-          min="8"
-          max="128"
-          value="12"
-        />
-        <span id="value">12</span>
+        <div class="length">
+          <p>Password Length:</p>
+          <input
+            type="range"
+            class="slider"
+            id="length"
+            name="length"
+            min="8"
+            max="128"
+            value="12"
+          />
+          <span id="value">12</span>
+        </div>
+
         <!-- character type checkboxes -->
       </div>
     </div>
