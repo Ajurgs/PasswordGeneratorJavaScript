@@ -6,6 +6,10 @@ var generateBtn = document.querySelector("#generate");
 var lengthSlider = document.getElementById("length");
 var lengthValue = document.getElementById("value");
 
+const lowerChar = "abcdefghijklmnopqrstuvwxyz";
+const upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numbers = "0123456789";
+const special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~\\'\"";
 lengthSlider.oninput = function () {
   lengthValue.innerHTML = this.value;
 };
@@ -31,5 +35,10 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-function passwordCriteria() {}
-function generatePassword() {}
+
+function generatePassword() {
+  let password = [lengthValue];
+  for (i = 0; i < lengthValue; i++) {
+    password[i] = lowerChar[Math.floor(Math.random * lowerChar.length) + 1];
+  }
+}
