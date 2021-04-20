@@ -2,14 +2,14 @@
 
 var modal = document.getElementById("passwordSpecs");
 var generateBtn = document.querySelector("#generate");
-
+var createBtn = document.querySelector("#makePassword");
 var lengthSlider = document.getElementById("length");
 var lengthValue = document.getElementById("value");
 
 const lowerChar = "abcdefghijklmnopqrstuvwxyz";
 const upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numbers = "0123456789";
-const special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~\\'\"";
+const special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 lengthSlider.oninput = function () {
   lengthValue.innerHTML = this.value;
 };
@@ -23,12 +23,12 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", displayModal());
-
+generateBtn.addEventListener("click", displayModal);
 // show modal on click
-generateBtn.onclick = function () {
+function displayModal() {
   modal.style.display = "block";
-};
+}
+
 // close modal on click off
 window.onclick = function (event) {
   if (event.target == modal) {
