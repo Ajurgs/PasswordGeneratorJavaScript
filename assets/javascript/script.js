@@ -46,40 +46,47 @@ function generatePassword() {
   if (!characters.every(allCheckedFalse)) {
     let usableChars = "";
     characters.forEach((set, index) => {
+      // loop through all checkboxes
       if (set.checked == true) {
+        // if checkbox is checked
         switch (index) {
           case 0: {
-            usableChars += lowerChar;
+            // lowercase checkbox checked
+            usableChars += lowerChar; // add lowercase characters to the usable charaters string
             break;
           }
           case 1: {
-            usableChars += upperChar;
+            // uppercase check box checked
+            usableChars += upperChar; //add uppercase characters to the usable charaters string
             break;
           }
           case 2: {
-            usableChars += numbers;
+            // number checkbox checked
+            usableChars += numbers; //add nubmer characters to the usable charaters string
             break;
           }
           case 3: {
-            usableChars += special;
+            // special characters checked
+            usableChars += special; // add specialcharacters to the usable charaters string
             break;
           }
         }
       }
     });
-    console.log(usableChars);
-    let password = "";
-    console.log(typeof password);
+    let password = ""; // set password to an empty string;
     for (i = 0; i < lengthSlider.value; i++) {
-      password += usableChars[Math.floor(Math.random() * usableChars.length)];
+      // loop for length of desired password
+      password += usableChars[Math.floor(Math.random() * usableChars.length)]; // randomly choose a character for the password
     }
-    return password;
+    modal.style.display = "none"; // close the modal
+    return password; // return the password
   } else {
     // if all not checked send an alert
     window.alert("Please select at least one character type.");
   }
 }
 
+// check to see if all input checkboxes are uncheked
 function allCheckedFalse(input) {
   return input.checked == false;
 }
