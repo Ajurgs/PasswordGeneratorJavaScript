@@ -6,24 +6,22 @@ var createBtn = document.querySelector("#makePassword");
 var lengthSlider = document.getElementById("length");
 var lengthValue = document.getElementById("value");
 
-const lowerChar = "abcdefghijklmnopqrstuvwxyz";
-const upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numbers = "0123456789";
-const special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+var characters = [
+  document.querySelector("#lowercase"),
+  document.querySelector("#uppercase"),
+  document.querySelector("#numbers"),
+  document.querySelector("#special"),
+];
+let lowerChar = "abcdefghijklmnopqrstuvwxyz";
+let upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let numbers = "0123456789";
+let special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 lengthSlider.oninput = function () {
   lengthValue.innerHTML = this.value;
 };
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", displayModal);
+createBtn.addEventListener("click", generatePassword);
 // show modal on click
 function displayModal() {
   modal.style.display = "block";
@@ -35,10 +33,32 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+// functions
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 
 function generatePassword() {
-  let password = [lengthValue];
-  for (i = 0; i < lengthValue; i++) {
-    password[i] = lowerChar[Math.floor(Math.random * lowerChar.length) + 1];
+  if (!characters.every(allCheckedFalse)) {
+    let usableChars = "test";
+    characters.forEach((set) => {
+      if (set.checked == true) {
+        usableChars += set;
+      }
+    });
+    console.log(usableChars);
+    let password = [lengthSlider.value];
+    for (i = 0; i < lengthSlider.value; i++) {
+      password.push(usableChars[Math.floor(Math.random * usableChars.length)]);
+    }
+  } else {
+    window.alert("Please select at least one character type.");
   }
+}
+
+function allCheckedFalse(input) {
+  return input.checked == false;
 }
