@@ -21,7 +21,7 @@ lengthSlider.oninput = function () {
 };
 // Add event listener to generate button
 generateBtn.addEventListener("click", displayModal);
-createBtn.addEventListener("click", generatePassword);
+createBtn.addEventListener("click", writePassword);
 // show modal on click
 function displayModal() {
   modal.style.display = "block";
@@ -42,19 +42,40 @@ function writePassword() {
 }
 
 function generatePassword() {
+  // check to see if any character checkbox is checked
   if (!characters.every(allCheckedFalse)) {
-    let usableChars = "test";
-    characters.forEach((set) => {
+    let usableChars = "";
+    characters.forEach((set, index) => {
       if (set.checked == true) {
-        usableChars += set;
+        switch (index) {
+          case 0: {
+            usableChars += lowerChar;
+            break;
+          }
+          case 1: {
+            usableChars += upperChar;
+            break;
+          }
+          case 2: {
+            usableChars += numbers;
+            break;
+          }
+          case 3: {
+            usableChars += special;
+            break;
+          }
+        }
       }
     });
     console.log(usableChars);
-    let password = [lengthSlider.value];
+    let password = "";
+    console.log(typeof password);
     for (i = 0; i < lengthSlider.value; i++) {
-      password.push(usableChars[Math.floor(Math.random * usableChars.length)]);
+      password += usableChars[Math.floor(Math.random() * usableChars.length)];
     }
+    return password;
   } else {
+    // if all not checked send an alert
     window.alert("Please select at least one character type.");
   }
 }
