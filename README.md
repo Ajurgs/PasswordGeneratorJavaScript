@@ -1,5 +1,20 @@
 ## PasswordGeneratorJavaScript
 
+# Description
+
+A random password generator that can create a random string between 8 and 128 characters.
+the user can select which type of characters to use in the password.
+
+in this project I learned how to link html css and javascript togeather and how they interact with eachother.
+I built the generator code with the first fuctonal idea that came to me.
+it solves how to randomly generate a string and how to just javascript to change html text.
+
 # Link
 
 [https://ajurgs.github.io/PasswordGeneratorJavaScript/](https://ajurgs.github.io/PasswordGeneratorJavaScript/)
+
+# Screenshots
+
+![mainscreen](./assets\images\mainscreen.PNG)
+![cirteria](./assets\images\passwordCriteria.PNG)
+![password](./assets\images\generatedPasswordExample.PNG)
