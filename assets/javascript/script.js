@@ -15,7 +15,7 @@ var characters = [
 let lowerChar = "abcdefghijklmnopqrstuvwxyz";
 let upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let numbers = "0123456789";
-let special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+let special = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 lengthSlider.oninput = function () {
   lengthValue.innerHTML = this.value;
 };
@@ -27,7 +27,7 @@ function displayModal() {
   modal.style.display = "block";
 }
 
-// close modal on click off
+// close modal on click offgit a
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
