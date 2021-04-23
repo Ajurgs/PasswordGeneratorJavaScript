@@ -27,7 +27,7 @@ function displayModal() {
   modal.style.display = "block";
 }
 
-// close modal on click offgit a
+// close modal on click off
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
