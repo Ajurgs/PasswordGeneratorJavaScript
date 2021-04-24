@@ -25,3 +25,4 @@ you can keep repeating the password generation as many time as wanted.
 ![mainscreen](./assets\images\mainscreen.PNG)
 ![cirteria](./assets\images\passwordCriteria.PNG)
 ![password](./assets\images\generatedPasswordExample.PNG)
+![test](./assets/images/mainscreen.png)
