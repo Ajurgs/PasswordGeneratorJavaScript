@@ -21,8 +21,7 @@ you can keep repeating the password generation as many time as wanted.
 [https://ajurgs.github.io/PasswordGeneratorJavaScript/](https://ajurgs.github.io/PasswordGeneratorJavaScript/)
 
 # Screenshots
+![screenshot](assets/images/mainscreen.PNG)
+![screenshot](assets/images/passwordCriteria.PNG)
+![screenshot](assets/images/generatedPasswordExample.PNG)
 
-![mainscreen](./assets\images\mainscreen.PNG)
-![cirteria](./assets\images\passwordCriteria.PNG)
-![password](./assets\images\generatedPasswordExample.PNG)
-![test](./assets/images/mainscreen.png)
